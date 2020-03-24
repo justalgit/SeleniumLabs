@@ -121,8 +121,8 @@ class TestTranslator(unittest.TestCase):
         self.driver.get(googleTranslateUrl)
         sourceField = self.getSourceField()
         sourceField.send_keys("USSR")
-        resultField = self.getResultField()
         time.sleep(delayTime)
+        resultField = self.getResultField()
         assert "СССР" == resultField.text
         self.driver.close()
 
