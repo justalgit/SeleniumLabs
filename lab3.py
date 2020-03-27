@@ -36,7 +36,7 @@ class TestTranslator(unittest.TestCase):
         sourceField.send_keys("cat")
         resultField = self.getResultField()
         time.sleep(delayTime)
-        assert "Кот" == resultField.text
+        assert ("Кот" == resultField.text or "кошка" == resultField.text)
         self.driver.close()
 
     def test_rus_to_eng(self):
@@ -114,7 +114,7 @@ class TestTranslator(unittest.TestCase):
         switchButton.click()
         time.sleep(delayTime)
         resultField = self.getResultField()
-        assert "USSR" == resultField.text
+        assert ("USSR" == resultField.text or "the USSR" == resultField.text)
         self.driver.close()
     
     def test_eng_abb_to_rus(self):
